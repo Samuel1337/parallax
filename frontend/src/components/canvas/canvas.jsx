@@ -9,8 +9,12 @@ class Canvas extends React.Component {
         this.handleParallax = this.handleParallax.bind(this);
     }
 
+    componentDidMount() {
+        let container = document.querySelector(".parallax-container");
+
+    }
+
     parallax() {
-        console.log("parallax on");
         document.addEventListener('mousemove', e => this.handleParallax(e));
     }
 
@@ -19,16 +23,14 @@ class Canvas extends React.Component {
             let container = document.querySelector(".parallax-container");
             
                 let moving_value = move.id;
-                let x = ((e.clientX - container.style.width) * moving_value) / 150;
-                let y = ((e.clientY - container.style.height) * moving_value) / 150;
-                // console.log(move.id);
-                // console.log("x:" + x, "y:" + y);
+                let x = ((e.clientX - (container.offsetWidth / 2)) * moving_value) / 150;
+                let y = ((e.clientY - (container.offsetHeight / 2)) * moving_value) / 150;
+
                 move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
             });
     }
 
     removeParallax() {
-        console.log("parallax off");
         document.removeEventListener('mousemove', this.handleParallax);
     }
 
@@ -36,6 +38,7 @@ class Canvas extends React.Component {
 
         return (
             <div id="parallax-container" className="parallax-container" onMouseEnter={this.parallax} onMouseLeave={this.removeParallax}>
+                <img src="assets/parallax/1.png" id="0" className="root-layer" />
                 <img src="assets/parallax/1.png" id="1" className="parallax-layer" />
                 <img src="assets/parallax/2.png" id="2" className="parallax-layer" />
                 <img src="assets/parallax/3.png" id="3" className="parallax-layer" />
