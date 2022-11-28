@@ -6,8 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Canvas />
+        <Canvas size="12px 24px" />
         <p>
           <code>Parallax</code> testing.
         </p>

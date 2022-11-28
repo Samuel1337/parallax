@@ -4,6 +4,7 @@ import "./canvas.scss";
 class Canvas extends React.Component {
     constructor(props) {
         super(props);
+
         this.parallax = this.parallax.bind(this);
         this.removeParallax = this.removeParallax.bind(this);
         this.handleParallax = this.handleParallax.bind(this);
