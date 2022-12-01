@@ -10,22 +10,16 @@ class Canvas extends React.Component {
         this.handleParallax = this.handleParallax.bind(this);
     }
 
-    componentDidMount() {
-        let container = document.querySelector(".parallax-container");
-
-    }
-
     parallax() {
         document.addEventListener('mousemove', e => this.handleParallax(e));
     }
 
     handleParallax(e) {
             document.body.querySelectorAll(".parallax-layer").forEach(move => {
-            let container = document.querySelector(".parallax-container");
             
                 let moving_value = move.id;
-                let x = ((e.clientX - (container.offsetWidth / 2)) * moving_value) / 150;
-                let y = ((e.clientY - (container.offsetHeight / 2)) * moving_value) / 150;
+                let x = ((e.clientX - (window.innerWidth / 2)) * moving_value) / 150;
+                let y = ((e.clientY - (window.innerHeight / 2)) * moving_value) / 150;
 
                 move.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
             });
@@ -39,15 +33,12 @@ class Canvas extends React.Component {
 
         return (
             <div id="parallax-container" className="parallax-container" onMouseEnter={this.parallax} onMouseLeave={this.removeParallax}>
-                <img src="assets/parallax/1.png" id="0" className="root-layer" />
-                <img src="assets/parallax/1.png" id="1" className="parallax-layer" />
-                <img src="assets/parallax/2.png" id="2" className="parallax-layer" />
-                <img src="assets/parallax/3.png" id="3" className="parallax-layer" />
-                <img src="assets/parallax/4.png" id="4" className="parallax-layer" />
-                <img src="assets/parallax/5.png" id="5" className="parallax-layer" />
-                <img src="assets/parallax/6.png" id="6" className="parallax-layer" />
-                <img src="assets/parallax/7.png" id="7" className="parallax-layer" />
-                <img src="assets/parallax/8.png" id="8" className="parallax-layer" />
+                <img src="eileen/parallax/0.png" id="0" className="root-layer" />
+                <img src="eileen/parallax/1.png" id="1" className="parallax-layer" />
+                <img src="eileen/parallax/2.png" id="2" className="parallax-layer" />
+                <img src="eileen/parallax/3.png" id="3" className="parallax-layer" />
+                <img src="eileen/parallax/4.png" id="4" className="parallax-layer" />
+                <img src="eileen/parallax/5.png" id="5" className="parallax-layer" />
             </div>
         )
     }

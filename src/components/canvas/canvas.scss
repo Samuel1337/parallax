@@ -4,23 +4,21 @@ header {
 
 .parallax-container {
     position: relative;
-    width: 80%;
+    width: 50%;
+    min-width: 50%;
     height: fit-content;
     max-height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    outline: solid 2px yellow;
+    outline: solid 2px lightslategray;
     border-radius: 5px;
 }
 
 .parallax-layer {
     position: absolute;
     width: 110%;
-    // height: 100%;
-    // top: 0;
-    // left: 0;
     object-fit: contain;
 }
 
